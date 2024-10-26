@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/Pages/CartPage.dart';
 import 'package:food_app/Pages/HomePage.dart';
+import 'package:food_app/Pages/PostAdd.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => const Homepage(),
         "/CartPage": (context) => CartPage(),
         "/HomePage": (context) => Homepage(),
+        "/PostAdd": (context) => Postadd()
       },
     );
   }

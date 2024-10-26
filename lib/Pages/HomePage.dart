@@ -17,13 +17,14 @@ class _HomepageState extends State<Homepage> {
   void _onItemTapped(int index) {
     if (index == 1) {
       Navigator.pushNamed(context, '/CartPage');
+    } else if (index == 2) {
+      Navigator.pushNamed(context, '/PostAdd');
     } else {
       setState(() {
         _selectedIndex = index;
       });
     }
   }
-
 
   @override
   Widget build(BuildContext context) {

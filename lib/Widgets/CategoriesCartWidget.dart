@@ -112,7 +112,7 @@ class CategoriesCartWidget extends StatelessWidget {
             ),
           ),
           
-          // Kotak Kedua (Salinan dari yang pertama)
+          // Kotak Kedua
           Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             height: 130,
@@ -216,7 +216,7 @@ class CategoriesCartWidget extends StatelessWidget {
             ),
           ),
           
-          // Kotak Ketiga (Salinan dari yang pertama)
+          // Kotak Ketiga
           Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             height: 130,
