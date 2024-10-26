@@ -86,7 +86,7 @@ class CategoriesCartWidget extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Text(
-                              "1", // Menampilkan angka 1
+                              "1",
                               style: TextStyle(fontSize: 18),
                             ),
                           ),
@@ -112,7 +112,7 @@ class CategoriesCartWidget extends StatelessWidget {
             ),
           ),
           
-          // Kotak Kedua (Salinan dari yang pertama)
+          // Kotak Kedua
           Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             height: 130,
@@ -216,7 +216,7 @@ class CategoriesCartWidget extends StatelessWidget {
             ),
           ),
           
-          // Kotak Ketiga (Salinan dari yang pertama)
+          // Kotak Ketiga
           Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             height: 130,
