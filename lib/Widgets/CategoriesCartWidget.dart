@@ -86,7 +86,7 @@ class CategoriesCartWidget extends StatelessWidget {
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             child: Text(
-                              "1", // Menampilkan angka 1
+                              "1",
                               style: TextStyle(fontSize: 18),
                             ),
                           ),
