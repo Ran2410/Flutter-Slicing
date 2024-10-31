@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Cartbarwidget extends StatelessWidget {
+  const Cartbarwidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

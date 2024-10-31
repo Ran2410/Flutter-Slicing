@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/Widgets/CartBarWidget.dart';
 
 import 'package:food_app/Widgets/CategoriesCartWidget.dart';
 
 class CartPage extends StatelessWidget {
-  CartPage({super.key});
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +16,8 @@ class CartPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  Cartbarwidget(),
-                  CategoriesCartWidget(),
+                  const Cartbarwidget(),
+                  const CategoriesCartWidget(),
                   const SizedBox(height: 20),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
