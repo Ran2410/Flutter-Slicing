@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/Pages/AddDataPage.dart';
 import 'package:food_app/Pages/CartPage.dart';
 import 'package:food_app/Pages/HomePage.dart';
 import 'package:food_app/Pages/PostAdd.dart';
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         "/": (context) => const Homepage(),
         "/CartPage": (context) => const CartPage(),
         "/HomePage": (context) => const Homepage(),
-        "/PostAdd": (context) => const Postadd()
+        "/PostAdd": (context) => const Postadd(),
+        "/AddDataPage": (context) => const Adddatapage(),
+        
       },
     );
   }

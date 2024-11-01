@@ -18,27 +18,32 @@ class Postadd extends StatelessWidget {
                   const SizedBox(height: 10),
                   const Postbarwidget(),
                   const SizedBox(height: 50),
-                  Container(
-                    width: 120,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Add Data",
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/AddDataPage");
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      width: 120,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Add Data",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 5),
-                          Icon(Icons.add, color: Colors.white, size: 18),
-                        ],
+                            SizedBox(width: 5),
+                            Icon(Icons.add, color: Colors.white, size: 18),
+                          ],
+                        ),
                       ),
                     ),
                   ),

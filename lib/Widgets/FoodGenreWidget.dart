@@ -8,8 +8,8 @@ class Foodgenrewidget extends StatelessWidget {
     return SingleChildScrollView(
       child: Center(
         child: Wrap(
-          spacing: 15, // Jarak horizontal antar kotak
-          runSpacing: 15, // Jarak vertikal antar baris
+          spacing: 15,
+          runSpacing: 15,
           children: [
             // Box Ke 1
             Container(
