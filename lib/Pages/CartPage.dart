@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Widgets/CartBarWidget.dart';
+import 'package:food_app/Widgets/Cart/CartBarWidget.dart';
+import 'package:food_app/Widgets/Cart/CategoriesCartWidget.dart';
 
-import 'package:food_app/Widgets/CategoriesCartWidget.dart';
-
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   const CartPage({super.key});
+
+  @override
+  _CartPageState createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  double subtotal = 94000.0;
+  double ppn = 0.11;
+  double total = 104000.0;
+
+  void updateTotal() {
+    setState(() {
+      double ppnAmount = subtotal * ppn;
+      total = subtotal + ppnAmount;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +47,10 @@ class CartPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "PPN 11%",
                         style: TextStyle(
                           fontSize: 16,
@@ -43,8 +58,8 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Rp 10.000,00",
-                        style: TextStyle(
+                        "Rp. ${ppn * subtotal}",
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.black,
                         ),
@@ -52,10 +67,10 @@ class CartPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Total Belanja",
                         style: TextStyle(
                           fontSize: 16,
@@ -63,8 +78,8 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Rp. 94.000,00",
-                        style: TextStyle(
+                        "Rp. $subtotal",
+                        style: const TextStyle(
                           fontSize: 16,
                           color: Colors.black,
                         ),
@@ -73,10 +88,10 @@ class CartPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   const Divider(color: Colors.grey),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Total Pembayaran",
                         style: TextStyle(
                           fontSize: 20,
@@ -85,8 +100,8 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Rp. 104.000,00",
-                        style: TextStyle(
+                        "Rp. $total",
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,7 +110,8 @@ class CartPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 30),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(8),
                       width: 300,
@@ -118,7 +134,7 @@ class CartPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.white,
-                            fontWeight: FontWeight.bold
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),

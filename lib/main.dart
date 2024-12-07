@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:food_app/Pages/AddDataPage.dart';
 import 'package:food_app/Pages/CartPage.dart';
 import 'package:food_app/Pages/HomePage.dart';
 import 'package:food_app/Pages/PostAdd.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
+
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +28,6 @@ class MyApp extends StatelessWidget {
         "/HomePage": (context) => const Homepage(),
         "/PostAdd": (context) => const Postadd(),
         "/AddDataPage": (context) => const Adddatapage(),
-        
       },
     );
   }

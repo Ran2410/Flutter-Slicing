@@ -1,8 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Widgets/PostBarWidget.dart';
+import 'package:food_app/Widgets/Post/PostBarWidget.dart';
 
-class Postadd extends StatelessWidget {
+class Postadd extends StatefulWidget {
   const Postadd({super.key});
+
+  @override
+  _PostaddState createState() => _PostaddState();
+}
+
+class _PostaddState extends State<Postadd> {
+  List<Map<String, dynamic>> items = [
+    {
+      'image': 'images/burger.png',
+      'name': 'Burger King Medium',
+      'price': 'Rp. 50.000,00',
+    },
+    {
+      'image': 'images/teh.png',
+      'name': 'Teh Botol Sostro',
+      'price': 'Rp. 3.000,00',
+    },
+    {
+      'image': 'images/burger.png',
+      'name': 'Burger King Small',
+      'price': 'Rp. 35.000,00',
+    },
+  ];
+
+  void removeItem(int index) {
+    setState(() {
+      items.removeAt(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +53,7 @@ class Postadd extends StatelessWidget {
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      width: 120,
+                      width: 140,
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(20),
@@ -51,32 +80,32 @@ class Postadd extends StatelessWidget {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 60,
+                      Flexible(
+                        flex: 1,
                         child: Text(
                           "Foto",
                           style: TextStyle(fontSize: 15),
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      SizedBox(
-                        width: 100,
+                      Flexible(
+                        flex: 2,
                         child: Text(
                           "Nama Produk",
                           style: TextStyle(fontSize: 15),
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      SizedBox(
-                        width: 60,
+                      Flexible(
+                        flex: 1,
                         child: Text(
                           "Harga",
                           style: TextStyle(fontSize: 15),
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      SizedBox(
-                        width: 60,
+                      Flexible(
+                        flex: 1,
                         child: Text(
                           "Aksi",
                           style: TextStyle(fontSize: 15),
@@ -85,113 +114,54 @@ class Postadd extends StatelessWidget {
                       ),
                     ],
                   ),
-
-                  // Box Ke 1
                   const Divider(color: Colors.grey),
                   const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 100,
-                        child: Image(
-                          image: AssetImage("images/burger.png"),
+                  ...items.map((item) {
+                    int index = items.indexOf(item);
+                    return Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Flexible(
+                              flex: 1,
+                              child: SizedBox(
+                                width: 100,
+                                child: Image.asset(item['image']),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 2,
+                              child: Text(
+                                item['name'],
+                                style: const TextStyle(fontSize: 15),
+                              ),
+                            ),
+                            Flexible(
+                              flex: 1,
+                              child: Text(
+                                item['price'],
+                                style: const TextStyle(fontSize: 15),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            Flexible(
+                              flex: 1,
+                              child: IconButton(
+                                icon: const Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                  size: 20,
+                                ),
+                                onPressed: () => removeItem(index),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Burger King Medium",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Rp. 50.000,00",
-                          style: TextStyle(fontSize: 15),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        child: Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                          size: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Box Ke 2
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 100,
-                        child: Image(
-                          image: AssetImage("images/teh.png"),
-                        ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Teh Botol Sostro",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Rp. 3.000,00",
-                          style: TextStyle(fontSize: 15),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        child: Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                          size: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Box Ke 3
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 100,
-                        child: Image(
-                          image: AssetImage("images/burger.png"),
-                        ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Burger King Small",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "Rp. 35.000,00",
-                          style: TextStyle(fontSize: 15),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        child: Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                          size: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
+                        const SizedBox(height: 20),
+                      ],
+                    );
+                  }),
                 ],
               ),
             ),

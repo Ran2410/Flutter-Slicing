@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Widgets/AppBarWidgets.dart';
-import 'package:food_app/Widgets/CategoriesWidget.dart';
-import 'package:food_app/Widgets/FoodGenreWidget.dart';
+import 'package:food_app/Widgets/Home/AppBarWidgets.dart';
+import 'package:food_app/Widgets/Home/CategoriesWidget.dart';
+import 'package:food_app/Widgets/Home/FoodGenreWidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Homepage extends StatefulWidget {
